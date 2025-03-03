@@ -1,41 +1,105 @@
 ---
-import NavComponent from "../components/navComponent.astro";
-import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import NavComponent from '../components/navComponent.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <div id="Margen">
-    <header>
-      <NavComponent />
-      <div id="introduction">
-        <h1>Ciao, I’m Alex.</h1>
-        <h2>A Product engineer from the UK based in milan</h2>
-        <p>
-          I work with leading-edge companies to create exceptional products. I
-          most recently worked with MoonPay to help make web3 accessible. Before
-          that, I built personal and business banking products for millions of
-          customers at Monzo.
-        </p>
-      </div>
-    </header>
-  </div>
+	<div id="Margen">
+		<header>
+			<NavComponent />
+			<div id="introduction">
+				<h1>
+					Ciao, I’m Alex.
+					<br />
+					<span id="subtitle">A Product engineer from the UK based in milan</span>
+				</h1>
+				<p id="description">
+					I work with leading-edge companies to create exceptional products. I most recently worked with
+					MoonPay to help make web3 accessible. Before that, I built personal and business banking products
+					for millions of customers at Monzo.
+				</p>
+				<button id="Button_Info" class="font-mono">More Information <span id="Button_arrow">→</span></button>
+			</div>
+		</header>
+		<hr id="First_hr" />
+		<main>
+			<section>
+				<h2>
+					Personal Projects<br />
+					<span id="Projects_Subtitle">Below is a selection of recent projects that I've worked on.</span>
+				</h2>
+			</section>
+		</main>
+	</div>
 </Layout>
 
 <style>
-  body {
-    display: flex;
-    justify-content: center;
-  }
-  #Margen {
-    width: 700px;
-    margin-top: 50px;
-  }
-  #introduction {
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-  }
+	body {
+		display: flex;
+		justify-content: center;
+		font-family: sans-serif;
+	}
+	#Margen {
+		width: 700px;
+		margin-top: 50px;
+	}
+	#introduction {
+		margin-top: 50px;
+	}
+	.font-mono {
+		font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+	}
+	h1 {
+		font-size: 40px;
+		font-weight: 600;
+		line-height: 0.8;
+	}
+	h2 {
+		font-weight: 600;
+		line-height: 2;
+	}
+	#subtitle {
+		font-size: 25px;
+		font-weight: 300;
+		color: gray;
+	}
+	#description {
+		font-size: 20px;
+		font-weight: 300;
+		color: rgb(114, 114, 114);
+		line-height: 1.4;
+	}
+	#Button_Info {
+		background-color: #000000;
+		border: none;
+		color: white;
+		padding: 10px 30px;
+		text-align: center;
+		text-decoration: none;
+		font-size: 14px;
+		font-weight: 700;
+		margin: 30px 0px;
+		cursor: pointer;
+		border-radius: 50px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	#Button_arrow {
+		font-size: 20px;
+		transition: transform 0.1s ease;
+	}
+	#Button_Info:hover #Button_arrow {
+		transform: translateX(10px);
+	}
+	#First_hr {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		opacity: 0.2;
+	}
+	#Projects_Subtitle {
+		font-size: 20px;
+		font-weight: 300;
+		color: gray;
+	}
 </style>
