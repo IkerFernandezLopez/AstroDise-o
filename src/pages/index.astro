@@ -1,0 +1,41 @@
+---
+import NavComponent from "../components/navComponent.astro";
+import Layout from "../layouts/Layout.astro";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <div id="Margen">
+    <header>
+      <NavComponent />
+      <div id="introduction">
+        <h1>Ciao, I’m Alex.</h1>
+        <h2>A Product engineer from the UK based in milan</h2>
+        <p>
+          I work with leading-edge companies to create exceptional products. I
+          most recently worked with MoonPay to help make web3 accessible. Before
+          that, I built personal and business banking products for millions of
+          customers at Monzo.
+        </p>
+      </div>
+    </header>
+  </div>
+</Layout>
+
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+  }
+  #Margen {
+    width: 700px;
+    margin-top: 50px;
+  }
+  #introduction {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+</style>

@@ -1,0 +1,36 @@
+---
+import astroLogo from "../assets/astro.svg";
+import background from "../assets/background.svg";
+---
+
+<nav>
+  <a href="../pages/index.astro" class="no-link-style">ap</a>
+  <div id="nav-links">
+    <a href="../pages/Information.astro" class="no-link-style font-mono"
+      >Information</a
+    >
+    <a href="../pages/Writing.astro" class="no-link-style font-mono">Writing</a>
+    <a href="../pages/Contact.astro" class="no-link-style font-mono">Contact</a>
+  </div>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 550;
+  }
+  #nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  .no-link-style {
+    color: inherit;
+    text-decoration: none;
+  }
+  .font-mono {
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+      monospace;
+  }
+</style>
