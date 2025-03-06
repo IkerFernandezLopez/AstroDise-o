@@ -1,0 +1,36 @@
+---
+import NavComponent from "../components/navComponent.astro";
+import FooterComponent from "../components/footerComponent.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div id="Margenes">
+    <header>
+      <NavComponent />
+    </header>
+    <main>
+      <section>
+        <h1 id="Title">Information</h1>
+      </section>
+    </main>
+    <footer>
+      <FooterComponent />
+    </footer>
+  </div>
+</Layout>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+  }
+  #Margenes {
+    width: 700px;
+    margin-top: 50px;
+  }
+  .font-mono {
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+      monospace;
+  }
+</style>
