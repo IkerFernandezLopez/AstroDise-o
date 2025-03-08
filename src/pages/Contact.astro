@@ -1,0 +1,79 @@
+---
+import NavComponent from '../components/navComponent.astro';
+import FooterComponent from '../components/footerComponent.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<div id="margen">
+		<header>
+			<NavComponent />
+		</header>
+		<main>
+			<section>
+				<h1 id="title">Contact</h1>
+				<hr class="hr_opacity" />
+				<p id="description">
+					If you'd like to get in touch, you can reach me using the following methods. Please note, that I'm
+					not currently available for freelance projects.
+				</p>
+				<div id="container">
+					<div id="container1">
+						<div id="Email"><h2>Email<br /><span class="content">hey@alexpate.com</span></h2></div>
+						<div id="GitHub"><h2>GitHub<br /><span class="content">git/alexpate</span></h2></div>
+					</div>
+					<div id="container2">
+						<div id="Twitter"><h2>Twitter<br /><span class="content">@alexjpate</span></h2></div>
+						<div id="Linkedin"><h2>Linkedin<br /><span class="content">in/alexjpate</span></h2></div>
+					</div>
+				</div>
+				<hr class="hr_opacity" />
+			</section>
+		</main>
+		<footer>
+			<FooterComponent />
+		</footer>
+	</div>
+</Layout>
+
+<style>
+	body {
+		display: flex;
+		justify-content: center;
+		font-family: sans-serif;
+	}
+	#margen {
+		width: 670px;
+		margin-top: 50px;
+	}
+	#title {
+		margin-top: 50px;
+		font-size: 35px;
+	}
+	.hr_opacity {
+		opacity: 0.2;
+	}
+	#description {
+		margin-top: 30px;
+		font-size: 18px;
+		line-height: 30px;
+	}
+	#container {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	#container1 {
+		width: 49%;
+	}
+	#container2 {
+		width: 49%;
+	}
+	.content {
+		font-size: 15px;
+		font-weight: 500;
+	}
+	h2 {
+		line-height: 25px;
+		font-size: 20px;
+	}
+</style>
