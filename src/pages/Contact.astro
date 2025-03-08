@@ -5,10 +5,6 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<div id="margen">
-		<header>
-			<NavComponent />
-		</header>
 		<main>
 			<section>
 				<h1 id="title">Contact</h1>
@@ -30,22 +26,10 @@ import Layout from '../layouts/Layout.astro';
 				<hr class="hr_opacity" />
 			</section>
 		</main>
-		<footer>
-			<FooterComponent />
-		</footer>
-	</div>
 </Layout>
 
-<style>
-	body {
-		display: flex;
-		justify-content: center;
-		font-family: sans-serif;
-	}
-	#margen {
-		width: 670px;
-		margin-top: 50px;
-	}
+<style scoped>
+
 	#title {
 		margin-top: 50px;
 		font-size: 35px;

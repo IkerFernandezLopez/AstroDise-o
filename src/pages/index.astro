@@ -1,15 +1,11 @@
 ---
-import NavComponent from '../components/navComponent.astro';
 import ButtonComponent from '../components/ButtonComponent.astro';
 import ArticleComponent from '../components/ArticleComponent.astro';
-import FooterComponent from '../components/footerComponent.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<div id="Margen">
 		<header>
-			<NavComponent />
 			<div id="introduction">
 				<h1>
 					Ciao, I’m Alex.
@@ -115,20 +111,9 @@ import Layout from '../layouts/Layout.astro';
 			</section>
 			<hr class="Margin-hr" />
 		</main>
-		<FooterComponent />
-	</div>
 </Layout>
 
 <style>
-	body {
-		display: flex;
-		justify-content: center;
-		font-family: sans-serif;
-	}
-	#Margen {
-		width: 670px;
-		margin-top: 50px;
-	}
 	#introduction {
 		margin-top: 50px;
 	}

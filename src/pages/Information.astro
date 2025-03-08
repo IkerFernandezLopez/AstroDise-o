@@ -1,15 +1,9 @@
 ---
-import NavComponent from '../components/navComponent.astro';
-import FooterComponent from '../components/footerComponent.astro';
 import Layout from '../layouts/Layout.astro';
 import ExperienceComponent from '../components/ExperienceComponent.astro';
 ---
 
 <Layout>
-	<div id="Margenes">
-		<header>
-			<NavComponent />
-		</header>
 		<main>
 			<section>
 				<h1 id="Title">Information</h1>
@@ -78,22 +72,9 @@ import ExperienceComponent from '../components/ExperienceComponent.astro';
 				<hr class="hr_opacity" style="margin-top: 30px;" />
 			</section>
 		</main>
-		<footer>
-			<FooterComponent />
-		</footer>
-	</div>
 </Layout>
 
 <style scoped>
-	body {
-		display: flex;
-		justify-content: center;
-		font-family: sans-serif;
-	}
-	#Margenes {
-		width: 670px;
-		margin-top: 50px;
-	}
 	#Title {
 		margin-top: 75px;
 		font-size: 30px;

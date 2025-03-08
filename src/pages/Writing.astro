@@ -6,10 +6,6 @@ import WritingComponent from '../components/WritingComponent.astro';
 ---
 
 <Layout>
-	<div id="margen">
-		<header>
-			<NavComponent />
-		</header>
 		<main>
 			<section>
 				<h1 id="title">Writing</h1>
@@ -130,22 +126,9 @@ import WritingComponent from '../components/WritingComponent.astro';
 				<hr class="hr_opacity" />
 			</section>
 		</main>
-		<footer>
-			<FooterComponent />
-		</footer>
-	</div>
 </Layout>
 
 <style scoped>
-	body {
-		display: flex;
-		justify-content: center;
-		font-family: sans-serif;
-	}
-	#margen {
-		margin-top: 60px;
-		width: 670px;
-	}
 	#title {
 		font-size: 30px;
 	}
