@@ -1,36 +1,131 @@
 ---
-import NavComponent from "../components/navComponent.astro";
-import FooterComponent from "../components/footerComponent.astro";
-import Layout from "../layouts/Layout.astro";
+import NavComponent from '../components/navComponent.astro';
+import FooterComponent from '../components/footerComponent.astro';
+import Layout from '../layouts/Layout.astro';
+import ExperienceComponent from '../components/ExperienceComponent.astro';
 ---
 
 <Layout>
-  <div id="Margenes">
-    <header>
-      <NavComponent />
-    </header>
-    <main>
-      <section>
-        <h1 id="Title">Information</h1>
-      </section>
-    </main>
-    <footer>
-      <FooterComponent />
-    </footer>
-  </div>
+	<div id="Margenes">
+		<header>
+			<NavComponent />
+		</header>
+		<main>
+			<section>
+				<h1 id="Title">Information</h1>
+				<hr class="hr_opacity" />
+				<p id="Description">
+					Hi there, I'm Alex. I build my own products, along side working with some amazing companies to help
+					them build theirs.<br /><br />Most recently, I was working with MoonPay to help build the future of
+					payments. Before that, I was working with Monzo - the fastest growing bank in the UK. Originally
+					joining as a product designer, I transitioned into a web engineer role where I worked with a variety
+					of teams to help rethink modern day banking for their millions of customers. <br /><br />I also
+					worked with Kalo (which eventually became Polywork) where I was the first UI Engineering hire. My
+					responsibilities included building out the design system as well as ensuring a high bar of design
+					quality across the product.<br /><br /> I've always bounced somewhere between design and engineering,
+					however the common thread has always been my love for building things that people love to use. If you're
+					interested in working together, feel free to reach out to me here: <br /><br />
+					If you're interested in working together, feel free to reach out to me here: <a
+						href="mailto:hey@alexpate.com"
+						id="Email">hey@alexpate.com.</a
+					>
+				</p>
+			</section>
+			<section>
+				<h2 id="Title2">Experience</h2>
+				<div id="ExperienceContainer">
+					<ExperienceComponent
+						img="../../IMG/mainframe-logo.webp"
+						title="Mainframe"
+						subtitle="Design Engineer"
+						dateStart="November 2024"
+						dateEnd="Present"
+					/>
+					<hr class="hr_opacity" />
+					<ExperienceComponent
+						img="../../IMG/moonPay-logo.webp"
+						title="MoonPay"
+						subtitle="Senior Front-End Engineer"
+						dateStart="April 2022"
+						dateEnd="August 2024"
+					/>
+					<hr class="hr_opacity" />
+					<ExperienceComponent
+						img="../../IMG/monzo-logo.webp"
+						title="Monzo"
+						subtitle="Web Engineer / Product Designer"
+						dateStart="May 2019"
+						dateEnd="November 2021"
+					/>
+					<hr class="hr_opacity" />
+					<ExperienceComponent
+						img="../../IMG/kalo-logo.webp"
+						title="Kalo"
+						subtitle="UI Engineer"
+						dateStart="February 2017"
+						dateEnd="May 2019"
+					/>
+					<hr class="hr_opacity" />
+					<ExperienceComponent
+						img="../../IMG/pusher-logo.webp"
+						title="Pusher"
+						subtitle="Front-end Developer"
+						dateStart="September 2015"
+						dateEnd="January 2017"
+					/>
+				</div>
+				<p><a href="https://alexpate.com/resume.pdf" id="DownloadResume">Download resume →</a></p>
+				<hr class="hr_opacity" style="margin-top: 30px;" />
+			</section>
+		</main>
+		<footer>
+			<FooterComponent />
+		</footer>
+	</div>
 </Layout>
-<style>
-  body {
-    display: flex;
-    justify-content: center;
-    font-family: sans-serif;
-  }
-  #Margenes {
-    width: 700px;
-    margin-top: 50px;
-  }
-  .font-mono {
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-      monospace;
-  }
+
+<style scoped>
+	body {
+		display: flex;
+		justify-content: center;
+		font-family: sans-serif;
+	}
+	#Margenes {
+		width: 670px;
+		margin-top: 50px;
+	}
+	#Title {
+		margin-top: 75px;
+		font-size: 30px;
+	}
+	.font-mono {
+		font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+	}
+	.hr_opacity {
+		opacity: 0.2;
+	}
+	#Description {
+		font-size: 18px;
+		font-weight: 300;
+		color: rgb(82, 82, 82);
+		line-height: 1.4;
+		line-height: 30px;
+		margin-bottom: 60px;
+	}
+	#Email {
+		color: rgb(0, 0, 0);
+	}
+	#Title2 {
+		font-size: 24px;
+		margin-top: 50px;
+	}
+	#ExperienceContainer {
+		margin-bottom: 50px;
+	}
+	#DownloadResume {
+		color: rgb(92, 92, 92);
+		text-decoration: none;
+		font-size: 14px;
+		font-weight: 500;
+	}
 </style>
