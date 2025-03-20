@@ -1,203 +1,180 @@
 ---
-import ButtonComponent from '../components/ButtonComponent.astro';
-import ArticleComponent from '../components/ArticleComponent.astro';
-import Layout from '../layouts/Layout.astro';
+import ButtonComponent from "../components/ButtonComponent.astro";
+import ArticleComponent from "../components/ArticleComponent.astro";
+import ProjectComponent from "../components/ProjectComponent.astro";
+import Layout from "../layouts/Layout.astro";
+import cv from "../CV.json";
 ---
 
+<script></script>
 <Layout>
-		<header>
-			<div id="introduction">
-				<h1>
-					Ciao, I’m Alex.
-					<br />
-					<span id="subtitle">A Product engineer from the UK based in milan</span>
-				</h1>
-				<p id="description">
-					I work with leading-edge companies to create exceptional products. I most recently worked with
-					MoonPay to help make web3 accessible. Before that, I built personal and business banking products
-					for millions of customers at Monzo.
-				</p>
-				<ButtonComponent text="More Information" />
-			</div>
-		</header>
-		<hr id="First_hr" />
-		<main>
-			<section>
-				<h2 class="Section-title">
-					Personal Projects<br />
-					<span id="Projects_Subtitle">Below is a selection of recent projects that I've worked on.</span>
-				</h2>
-				<div id="CardGroup">
-					<article class="card">
-						<a href="https://www.hystruct.com/">
-							<div class="Card-Padding">
-								<img src="../../IMG/hystruct.webp" alt="" class="CardIMG" />
-								<h3 class="Card-title">
-									Hystruct<br />
-									<span class="Card-Subtitle">Scrape structured data from the web with AI.</span>
-								</h3>
-							</div>
-						</a>
-					</article>
-					<article class="card">
-						<a href="https://glow.as/">
-							<div class="Card-Padding">
-								<img src="../../IMG/glow.webp" alt="" class="CardIMG" />
-								<h3 class="Card-title">
-									Glow
-									<br />
-									<span class="Card-Subtitle"
-										>A super simple way to create beautiful personal landing pages.</span
-									>
-								</h3>
-							</div>
-						</a>
-					</article>
-					<article class="card">
-						<a href="https://www.flagdb.com/">
-							<div class="Card-Padding">
-								<img src="../../IMG/flagdb.webp" alt="" class="CardIMG" />
-								<h3 class="Card-title">
-									FlagDB <br />
-									<span class="Card-Subtitle"
-										>A personal project to build a database of flags from around the world.</span
-									>
-								</h3>
-							</div>
-						</a>
-					</article>
-					<article class="card">
-						<a href="https://github.com/alexpate/awesome-design-systems">
-							<div class="Card-Padding">
-								<img src="../../IMG/awesome.webp" alt="" class="CardIMG" />
-								<h3 class="Card-title">
-									Awesome Design Systems <br />
-									<span class="Card-Subtitle">A curated list of design systems.</span>
-								</h3>
-							</div>
-						</a>
-					</article>
-				</div>
-				<ButtonComponent text="View older projects" />
-			</section>
-			<section>
-				<div id="MargenII">
-					<h2 class="Section-title">Recent Writing</h2>
-				</div>
-				<article>
-					<ArticleComponent
-						title="Future CSS: Container Queries"
-						date="23 Sept 2024"
-						content="A look at the future of CSS with Container queries."
-					/>
-				</article>
-				<hr class="Margin-hr" />
-				<article>
-					<ArticleComponent
-						title="Cleaner JavaScript promises with safe-await"
-						date="22 May 2024"
-						content="Explore how the safe-await pattern can simplify handling JavaScript promises, making code cleaner and more maintainable."
-					/>
-				</article>
-				<hr class="Margin-hr" />
-				<article style="padding-bottom: 20px;">
-					<ArticleComponent
-						title="Future CSS: Text Wrap Pretty"
-						date="21 May 2024"
-						content="Exploring the future of CSS text wrapping with the text-wrap property."
-					/>
-				</article>
-				<ButtonComponent text="View More Posts" />
-			</section>
-			<hr class="Margin-hr" />
-		</main>
+  <header>
+    <div id="introduction">
+      <h1>
+        Ciao, I’m {cv.name}.
+        <br />
+        <span id="subtitle">{cv.title}</span>
+      </h1>
+      <p id="description">{cv.profile_summary}</p>
+      <ButtonComponent text="More Information" />
+    </div>
+  </header>
+  <hr id="First_hr" />
+  <main>
+    <section>
+      <h2 class="Section-title">
+        Personal Projects<br />
+        <span id="Projects_Subtitle"
+          >Below is a selection of recent projects that I've worked on.</span
+        >
+      </h2>
+      <div id="CardGroup">
+        <ProjectComponent
+          Title={cv.projects[0].name}
+          Description={cv.projects[0].description}
+          Image={cv.projects[0].image}
+          Url={cv.projects[0].url}
+        />
+        <ProjectComponent
+          Title={cv.projects[1].name}
+          Description={cv.projects[1].description}
+          Image={cv.projects[1].image}
+          Url={cv.projects[1].url}
+        />
+        <ProjectComponent
+          Title={cv.projects[2].name}
+          Description={cv.projects[2].description}
+          Image={cv.projects[2].image}
+          Url={cv.projects[2].url}
+        />
+        <ProjectComponent
+          Title={cv.projects[3].name}
+          Description={cv.projects[3].description}
+          Image={cv.projects[3].image}
+          Url={cv.projects[3].url}
+        />
+      </div>
+      <ButtonComponent text="View older projects" />
+    </section>
+    <section>
+      <div id="MargenII">
+        <h2 class="Section-title">Recent Writing</h2>
+      </div>
+      <article>
+        <ArticleComponent
+          title="Future CSS: Container Queries"
+          date="23 Sept 2024"
+          content="A look at the future of CSS with Container queries."
+        />
+      </article>
+      <hr class="Margin-hr" />
+      <article>
+        <ArticleComponent
+          title="Cleaner JavaScript promises with safe-await"
+          date="22 May 2024"
+          content="Explore how the safe-await pattern can simplify handling JavaScript promises, making code cleaner and more maintainable."
+        />
+      </article>
+      <hr class="Margin-hr" />
+      <article style="padding-bottom: 20px;">
+        <ArticleComponent
+          title="Future CSS: Text Wrap Pretty"
+          date="21 May 2024"
+          content="Exploring the future of CSS text wrapping with the text-wrap property."
+        />
+      </article>
+      <ButtonComponent text="View More Posts" />
+    </section>
+    <hr class="Margin-hr" />
+  </main>
 </Layout>
 
 <style>
-	#introduction {
-		margin-top: 50px;
-	}
-	.font-mono {
-		font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-	}
-	h1 {
-		font-size: 40px;
-		font-weight: 600;
-		line-height: 0.8;
-	}
-	h2 {
-		font-weight: 600;
-		line-height: 2;
-	}
-	#subtitle {
-		font-size: 25px;
-		font-weight: 300;
-		color: gray;
-	}
-	#description {
-		font-size: 20px;
-		font-weight: 300;
-		color: rgb(114, 114, 114);
-		line-height: 1.4;
-	}
-	#First_hr {
-		margin-top: 50px;
-		margin-bottom: 50px;
-		opacity: 0.2;
-	}
-	#Projects_Subtitle {
-		font-size: 18px;
-		font-weight: 300;
-		color: rgb(85, 85, 85);
-	}
-	#CardGroup {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 30px;
-	}
-	.card {
-		width: 47%;
-		background-color: rgb(249, 248, 248);
-		border-radius: 10px;
-		transition: background-color 0.1s ease-in-out;
-	}
-	.card:hover {
-		background-color: rgb(238, 238, 238);
-		transition: background-color 0.1s ease-in-out;
-	}
-	.CardIMG {
-		min-width: 100px;
-		width: 100%;
-		border-radius: 13px;
-	}
-	.Card-Padding {
-		padding: 30px;
-	}
-	.Card-title {
-		font-size: 19px;
-		font-weight: 600;
-		line-height: 1.3;
-		color: black;
-	}
-	.Card-Subtitle {
-		font-size: 17px;
-		font-weight: 300;
-		color: rgb(139, 139, 139);
-		font-family: sans-serif;
-	}
-	a {
-		text-decoration: none;
-	}
-	#MargenII {
-		margin-top: 100px;
-	}
-	.Section-title {
-		font-size: 24px;
-		font-weight: 600;
-	}
-	.Margin-hr {
-		margin-top: 40px;
-		margin-bottom: 40px;
-		opacity: 0.2;
-	}
+  #introduction {
+    margin-top: 50px;
+  }
+  .font-mono {
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+      monospace;
+  }
+  h1 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 0.8;
+  }
+  h2 {
+    font-weight: 600;
+    line-height: 2;
+  }
+  #subtitle {
+    font-size: 25px;
+    font-weight: 300;
+    color: gray;
+  }
+  #description {
+    font-size: 20px;
+    font-weight: 300;
+    color: rgb(114, 114, 114);
+    line-height: 1.4;
+  }
+  #First_hr {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    opacity: 0.2;
+  }
+  #Projects_Subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgb(85, 85, 85);
+  }
+  #CardGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .card {
+    width: 47%;
+    background-color: rgb(249, 248, 248);
+    border-radius: 10px;
+    transition: background-color 0.1s ease-in-out;
+  }
+  .card:hover {
+    background-color: rgb(238, 238, 238);
+    transition: background-color 0.1s ease-in-out;
+  }
+  .CardIMG {
+    min-width: 100px;
+    width: 100%;
+    border-radius: 13px;
+  }
+  .Card-Padding {
+    padding: 30px;
+  }
+  .Card-title {
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: black;
+  }
+  .Card-Subtitle {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgb(139, 139, 139);
+    font-family: sans-serif;
+  }
+  a {
+    text-decoration: none;
+  }
+  #MargenII {
+    margin-top: 100px;
+  }
+  .Section-title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .Margin-hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    opacity: 0.2;
+  }
 </style>
