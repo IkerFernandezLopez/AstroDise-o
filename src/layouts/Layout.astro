@@ -1,39 +1,35 @@
 ---
-import NavComponent from '../components/navComponent.astro';
-import FooterComponent from '../components/footerComponent.astro';
+import NavComponent from "../components/navComponent.astro";
+import FooterComponent from "../components/footerComponent.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Iker Fernandez</title>
-	</head>
-	<body>
-		<div id="margen">
-			<header>
-				<NavComponent />
-			</header>
-			<slot />
-			<footer>
-				<FooterComponent />
-			</footer>
-		</div>
-	</body>
-</html>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+<title>Iker Fernandez</title>
+
+<body>
+  <div id="margen">
+    <header>
+      <NavComponent />
+    </header>
+    <slot />
+    <footer>
+      <FooterComponent />
+    </footer>
+  </div>
+</body>
 
 <style scoped>
-	html,
-	body {
-		display: flex;
-		justify-content: center;
-		font-family: sans-serif;
-	}
-	#margen {
-		width: 670px;
-		margin-top: 50px;
-	}
+  html,
+  body {
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+  }
+  #margen {
+    width: 670px;
+    margin-top: 50px;
+  }
 </style>
