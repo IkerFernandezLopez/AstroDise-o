@@ -1,0 +1,52 @@
+---
+export interface Props {
+  degree: string;
+  institution: string;
+  year: string;
+}
+
+const { degree, institution, year } = Astro.props;
+---
+
+<div id="main">
+  <h1>{institution}</h1>
+  <h3>{degree}</h3>
+  <div id="content">
+    <h3 id="title">{year}</h3>
+  </div>
+</div>
+
+<style>
+  #main {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #main h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  #main h3 {
+    color: #555;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  #content {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+  }
+
+  #title {
+    color: #777;
+    font-size: 18px;
+    margin: 0;
+  }
+</style>

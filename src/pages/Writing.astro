@@ -2,127 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 import WritingComponent from "../components/WritingComponent.astro";
 import TItleComponent from "../components/TItleComponent.astro";
+import cv from "../cv.json";
 ---
 
 <Layout>
   <main>
     <section>
-      <TItleComponent title="Writing" />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="Future CSS: Container Queries"
-        date="23 Sept 2624"
-        content="A look at the future of CSS with container queries."
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="Safe-await pattern"
-        date="22 May 2824"
-        content="Explore how the safe-await pattern can simplify handling JavaScript promises, making code cleaner and more maintainable."
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="Future CSS: Text Wrap Pretty"
-        date="21 May 2824"
-        content="Exploring the future of CSS text wrapping with the text-wrap property."
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="Future CSS: Native scroll animations"
-        date="26 May 2624"
-        content="Exploring the future of CSS animations with scroll-linked animations."
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="Chrome DevTools Tips"
-        date="24 Aug 2621"
-        content="A few tips and tricks that you can use in Chrome DevTools."
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="Theme-driven design systems"
-        date="4 Jan 2619"
-        content="Creating more open and flexible UI systems by breaking components into smaller parts and using design tokens to encourage experimentation and keep code DRY."
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="Things I want to learn/improve in 2019"
-        date="3 Jan 2019"
-        content="I recently read this great post..."
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="5 things to consider before building yout living styleguide"
-        date="17 Dec 2016"
-        content="it's been about 6 months since we propetly began to integrate our living styleguide (chameleon) into"
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="How to name Sass color variables"
-        date="5 Sept 2016"
-        content="When it comes to naming Sass variables, I suck. I think I've found the perfect solution, get half"
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="A few lessons learnt from my first year in a design team"
-        date="3 Aug 2016"
-        content="A couple of months ago, I wrote a post on the Pusher blog about a few lessons that I learned after"
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="SVG Progress Circles Part 2 - With JavaScript"
-        date="9 May 2016"
-        content="This is a follow-on post from my previous post a few weeks ago, about implementing an SVG progress"
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="Inlining SVG's with Rails"
-        date="23 Apr 2016"
-        content="As part of our recent redesign of the Pusher dashboard, we changed the way that we bring in icons"
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="Managing font weights with Sass"
-        date="12 Apr 2016"
-        content="Managing font families and weights shouldn't be a big deal. Add the font family to the body tag, and"
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="Pure SVG Progress Circles"
-        date="12 Apr 2016"
-        content="Progress circles are a classic dashboard element. They provide stats in a quick-to-digest view"
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="Managing the z-index with Sass"
-        date="29 Jul 2015"
-        content="As it goes, the z-index can quickly become a messy thing to control, particularly in a large code"
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="Installing a Positive SSL certificate on Nginx"
-        date="28 Jun 2015"
-        content="This is a quick guide of how to install an SSL certificate on an nginx server. It assumes that you"
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="Searching multiple tables with one query with Laravel"
-        date="12 Jun 2015"
-        content="Whilst developing the back-end for my final year project (redesign of Panasonic Global), I ran in to"
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="Tools that I use on a daily basis"
-        date="10 Feb 2015"
-        content="I always find it interesting to see what tools and techniques other developers use in their workflow"
-      />
-      <hr class="hr_opacity" />
-      <WritingComponent
-        title="Random HEX Colour Generator in JavaScript"
-        date="24 Mar 2014"
-        content="I first made this when I was getting started with jQuery. At the time, I guess it seemed like a good"
-      />
-      <hr class="hr_opacity" />
+      <TItleComponent title="Skills" />
+      <div id="Container">
+        {cv.skills.map((skill) => <WritingComponent title={skill} />)}
+      </div>
     </section>
   </main>
 </Layout>
@@ -141,5 +30,9 @@ import TItleComponent from "../components/TItleComponent.astro";
   }
   footer {
     margin-top: -20px;
+  }
+  #Container {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
   }
 </style>

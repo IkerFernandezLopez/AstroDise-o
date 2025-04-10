@@ -1,50 +1,56 @@
 ---
 export interface Props {
-	img: string;
-	title: string;
-	subtitle: string;
-	dateStart: string;
-	dateEnd: string;
+  position: string;
+  company: string;
+  location: string;
+  duration: string;
+  responsibilities: string[];
 }
 
-const { img, title, subtitle, dateStart, dateEnd } = Astro.props;
+const { position, company, location, duration, responsibilities } = Astro.props;
 ---
 
 <div id="main">
-	<img src={img} alt="Image description" />
-	<div id="content">
-		<h3 id="title">
-			{title}<br />
-			<span id="subtitle">{subtitle}</span>
-		</h3>
-		<p class="font-mono">{dateStart} → {dateEnd}</p>
-	</div>
+  <h1>{company}</h1>
+  <h3>{position}</h3>
+  <div id="content">
+    <h3 id="title">{location}</h3>
+    <h3 id="subtitle">{duration}</h3>
+    <ul>
+      {responsibilities.map((responsibility) => <li>{responsibility}</li>)}
+    </ul>
+  </div>
 </div>
 
 <style scoped>
-	#main {
-		display: flex;
-		justify-content: left;
-		margin-top: 50px;
-		gap: 20px;
-	}
-	img {
-		width: 60px;
-		height: 60px;
-		border-radius: 20%;
-	}
-	#title {
-		font-size: 20px;
-	}
-	#subtitle {
-		font-size: 18px;
-		font-weight: 300;
-	}
-	h3 {
-		margin: 0;
-		line-height: 30px;
-	}
-	.font-mono {
-		font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-	}
+  #main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 50px;
+    gap: 20px;
+  }
+
+  #content {
+    background-color: #c9c9c9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  #title {
+    font-weight: bold;
+    color: #333;
+  }
+
+  #subtitle {
+    font-style: italic;
+    color: #555;
+  }
+
+  .font-mono {
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+      monospace;
+    color: #666;
+  }
 </style>

@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import ExperienceComponent from "../components/ExperienceComponent.astro";
 import TItleComponent from "../components/TItleComponent.astro";
+import cv from "../cv.json";
+import EducationComponent from "../components/EducationComponent.astro";
 ---
 
 <Layout>
@@ -31,45 +33,41 @@ import TItleComponent from "../components/TItleComponent.astro";
     <section>
       <h2 id="Title2">Experience</h2>
       <div id="ExperienceContainer">
-        <ExperienceComponent
-          img="../../IMG/mainframe-logo.webp"
-          title="Mainframe"
-          subtitle="Design Engineer"
-          dateStart="November 2024"
-          dateEnd="Present"
-        />
-        <hr class="hr_opacity" />
-        <ExperienceComponent
-          img="../../IMG/moonPay-logo.webp"
-          title="MoonPay"
-          subtitle="Senior Front-End Engineer"
-          dateStart="April 2022"
-          dateEnd="August 2024"
-        />
-        <hr class="hr_opacity" />
-        <ExperienceComponent
-          img="../../IMG/monzo-logo.webp"
-          title="Monzo"
-          subtitle="Web Engineer / Product Designer"
-          dateStart="May 2019"
-          dateEnd="November 2021"
-        />
-        <hr class="hr_opacity" />
-        <ExperienceComponent
-          img="../../IMG/kalo-logo.webp"
-          title="Kalo"
-          subtitle="UI Engineer"
-          dateStart="February 2017"
-          dateEnd="May 2019"
-        />
-        <hr class="hr_opacity" />
-        <ExperienceComponent
-          img="../../IMG/pusher-logo.webp"
-          title="Pusher"
-          subtitle="Front-end Developer"
-          dateStart="September 2015"
-          dateEnd="January 2017"
-        />
+        {
+          cv.experience.map((exp) => (
+            <ExperienceComponent
+              position={exp.position}
+              company={exp.company}
+              location={exp.location}
+              duration={exp.duration}
+              responsibilities={exp.responsibilities.map(
+                (responsibility) => responsibility
+              )}
+            />
+          ))
+        }
+      </div>
+      <div>
+        <h2>Estudios</h2>
+        {
+          cv.education.map((edu) => (
+            <EducationComponent
+              degree={edu.degree}
+              institution={edu.institution}
+              year={edu.year}
+            />
+          ))
+        }
+      </div>
+      <div>
+        <h2>Idiomas</h2>
+        {
+          cv.languages.map((lang) => (
+            <div class="font-mono">
+              {lang.language} - {lang.level}
+            </div>
+          ))
+        }
       </div>
       <p>
         <a href="https://alexpate.com/resume.pdf" id="DownloadResume"
