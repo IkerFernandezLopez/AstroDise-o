@@ -1,38 +1,38 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import WritingComponent from "../components/WritingComponent.astro";
-import TItleComponent from "../components/TItleComponent.astro";
-import cv from "../cv.json";
+import Layout from '../layouts/Layout.astro';
+import WritingComponent from '../components/WritingComponent.astro';
+import TItleComponent from '../components/TItleComponent.astro';
+import cv from '../cv.json';
 ---
 
 <Layout>
-  <main>
-    <section>
-      <TItleComponent title="Skills" />
-      <div id="Container">
-        {cv.skills.map((skill) => <WritingComponent title={skill} />)}
-      </div>
-    </section>
-  </main>
+	<main>
+		<section>
+			<TItleComponent title="Skills" />
+			<div id="Container">
+				{cv.skills.map((skill) => <WritingComponent title={skill} />)}
+			</div>
+		</section>
+	</main>
 </Layout>
 
 <style scoped>
-  #title {
-    font-size: 30px;
-  }
-  section {
-    margin-top: 50px;
-  }
-  .hr_opacity {
-    opacity: 0.2;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-  footer {
-    margin-top: -20px;
-  }
-  #Container {
-    display: grid;
-    grid-template-columns: repeat(2, 2fr);
-  }
+	#title {
+		font-size: 30px;
+	}
+	section {
+		margin-top: 50px;
+	}
+	.hr_opacity {
+		opacity: 0.2;
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+	footer {
+		margin-top: -20px;
+	}
+	#Container {
+		display: grid;
+		grid-template-columns: repeat(2, 2fr);
+	}
 </style>
