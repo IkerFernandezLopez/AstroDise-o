@@ -1,70 +1,70 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import TItleComponent from "../components/TItleComponent.astro";
+import Layout from '../layouts/Layout.astro';
+import TItleComponent from '../components/TItleComponent.astro';
+import cv from '../cv.json';
 ---
 
 <Layout>
-  <main>
-    <section>
-      <TItleComponent title="Contact" />
-      <hr class="hr_opacity" />
-      <p id="description">
-        If you'd like to get in touch, you can reach me using the following
-        methods. Please note, that I'm not currently available for freelance
-        projects.
-      </p>
-      <div id="container">
-        <div id="container1">
-          <div id="Email">
-            <h2>Email<br /><span class="content">hey@alexpate.com</span></h2>
-          </div>
-          <div id="GitHub">
-            <h2>GitHub<br /><span class="content">git/alexpate</span></h2>
-          </div>
-        </div>
-        <div id="container2">
-          <div id="Twitter">
-            <h2>Twitter<br /><span class="content">@alexjpate</span></h2>
-          </div>
-          <div id="Linkedin">
-            <h2>Linkedin<br /><span class="content">in/alexjpate</span></h2>
-          </div>
-        </div>
-      </div>
-      <hr class="hr_opacity" />
-    </section>
-  </main>
+	<main>
+		<section>
+			<TItleComponent title="Contact" />
+			<hr class="hr_opacity" />
+			<p id="description">
+				If you'd like to get in touch, you can reach me using the following methods. Please note, that I'm not
+				currently available for freelance projects.
+			</p>
+			<div id="container">
+				<div id="container1">
+					<div id="Email">
+						<h2>Email<br /><span class="content">{cv.contact.email}</span></h2>
+					</div>
+					<div id="GitHub">
+						<h2>GitHub<br /><span class="content">{cv.contact.github}</span></h2>
+					</div>
+				</div>
+				<div id="container2">
+					<div id="Twitter">
+						<h2>Pagina Web<br /><span class="content">{cv.contact.website}</span></h2>
+					</div>
+					<div id="Linkedin">
+						<h2>Linkedin<br /><span class="content">{cv.contact.linkedin}</span></h2>
+					</div>
+				</div>
+			</div>
+			<hr class="hr_opacity" />
+		</section>
+	</main>
 </Layout>
 
 <style scoped>
-  #title {
-    margin-top: 50px;
-    font-size: 35px;
-  }
-  .hr_opacity {
-    opacity: 0.2;
-  }
-  #description {
-    margin-top: 30px;
-    font-size: 18px;
-    line-height: 30px;
-  }
-  #container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  #container1 {
-    width: 49%;
-  }
-  #container2 {
-    width: 49%;
-  }
-  .content {
-    font-size: 15px;
-    font-weight: 500;
-  }
-  h2 {
-    line-height: 25px;
-    font-size: 20px;
-  }
+	#title {
+		margin-top: 50px;
+		font-size: 35px;
+	}
+	.hr_opacity {
+		opacity: 0.2;
+	}
+	#description {
+		margin-top: 30px;
+		font-size: 18px;
+		line-height: 30px;
+	}
+	#container {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	#container1 {
+		width: 49%;
+	}
+	#container2 {
+		width: 49%;
+	}
+	.content {
+		font-size: 15px;
+		font-weight: 500;
+	}
+	h2 {
+		line-height: 25px;
+		font-size: 20px;
+	}
 </style>

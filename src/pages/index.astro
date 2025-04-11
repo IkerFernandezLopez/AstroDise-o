@@ -1,165 +1,162 @@
 ---
-import ButtonComponent from "../components/ButtonComponent.astro";
-import ArticleComponent from "../components/ArticleComponent.astro";
-import ProjectComponent from "../components/ProjectComponent.astro";
-import Layout from "../layouts/Layout.astro";
-import cv from "../CV.json";
+import ButtonComponent from '../components/ButtonComponent.astro';
+import ArticleComponent from '../components/ArticleComponent.astro';
+import ProjectComponent from '../components/ProjectComponent.astro';
+import Layout from '../layouts/Layout.astro';
+import cv from '../cv.json';
 ---
 
 <script></script>
 <Layout>
-  <header>
-    <div id="introduction">
-      <h1>
-        Ciao, I’m {cv.name}.
-        <br />
-        <span id="subtitle">{cv.title}</span>
-      </h1>
-      <p id="description">{cv.profile_summary}</p>
-      <ButtonComponent text="More Information" />
-    </div>
-  </header>
-  <hr id="First_hr" />
-  <main>
-    <section>
-      <h2 class="Section-title">
-        Personal Projects<br />
-        <span id="Projects_Subtitle"
-          >Below is a selection of recent projects that I've worked on.</span
-        >
-      </h2>
-      <div id="CardGroup">
-        <ProjectComponent
-          Title={cv.projects[0].name}
-          Description={cv.projects[0].description}
-          Image={cv.projects[0].image}
-          Url={cv.projects[0].url}
-        />
-        <ProjectComponent
-          Title={cv.projects[1].name}
-          Description={cv.projects[1].description}
-          Image={cv.projects[1].image}
-          Url={cv.projects[1].url}
-        />
-        <ProjectComponent
-          Title={cv.projects[2].name}
-          Description={cv.projects[2].description}
-          Image={cv.projects[2].image}
-          Url={cv.projects[2].url}
-        />
-        <ProjectComponent
-          Title={cv.projects[3].name}
-          Description={cv.projects[3].description}
-          Image={cv.projects[3].image}
-          Url={cv.projects[3].url}
-        />
-      </div>
-      <ButtonComponent text="View older projects" />
-    </section>
-    <section>
-      <div id="MargenII">
-        <h2 class="Section-title">Recent Writing</h2>
-      </div>
-        <article>
-          <ArticleComponent
-            title="Future CSS: Container Queries"
-            date="23 Sept 2024"
-            content="A look at the future of CSS with Container queries."
-          />
-        </article>
-
-    </section>
-    <ButtonComponent text="View More Posts" />
-  </main>
-  <hr class="Margin-hr" />
+	<header>
+		<div id="introduction">
+			<h1>
+				Ciao, I’m {cv.name}.
+				<br />
+				<span id="subtitle">{cv.title}</span>
+			</h1>
+			<p id="description">{cv.profile_summary}</p>
+			<ButtonComponent text="More Information" />
+		</div>
+	</header>
+	<hr id="First_hr" />
+	<main>
+		<section>
+			<h2 class="Section-title">
+				Personal Projects<br />
+				<span id="Projects_Subtitle">Below is a selection of recent projects that I've worked on.</span>
+			</h2>
+			<div id="CardGroup">
+				<ProjectComponent
+					Title={cv.projects[0].name}
+					Description={cv.projects[0].description}
+					Image={cv.projects[0].image}
+					Url={cv.projects[0].url}
+				/>
+				<ProjectComponent
+					Title={cv.projects[1].name}
+					Description={cv.projects[1].description}
+					Image={cv.projects[1].image}
+					Url={cv.projects[1].url}
+				/>
+				<ProjectComponent
+					Title={cv.projects[2].name}
+					Description={cv.projects[2].description}
+					Image={cv.projects[2].image}
+					Url={cv.projects[2].url}
+				/>
+				<ProjectComponent
+					Title={cv.projects[3].name}
+					Description={cv.projects[3].description}
+					Image={cv.projects[3].image}
+					Url={cv.projects[3].url}
+				/>
+			</div>
+			<ButtonComponent text="View older projects" />
+		</section>
+		<section>
+			<div id="MargenII">
+				<h2 class="Section-title">Recent Blog Posts</h2>
+			</div>
+			<article>
+				{
+					cv.blog_posts.map(({ title, summary, date }) => (
+						<hr class="opacity" />
+						<ArticleComponent title={title} summary={summary} date={date} />
+					))
+				}
+			</article>
+		</section>
+		<ButtonComponent text="View More Posts" />
+	</main>
+	<hr class="Margin-hr" />
 </Layout>
 
 <style scoped>
-  #introduction {
-    margin-top: 50px;
-  }
-  .font-mono {
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-      monospace;
-  }
-  h1 {
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 0.8;
-  }
-  h2 {
-    font-weight: 600;
-    line-height: 2;
-  }
-  #subtitle {
-    font-size: 25px;
-    font-weight: 300;
-    color: gray;
-  }
-  #description {
-    font-size: 20px;
-    font-weight: 300;
-    color: rgb(114, 114, 114);
-    line-height: 1.4;
-  }
-  #First_hr {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    opacity: 0.2;
-  }
-  #Projects_Subtitle {
-    font-size: 18px;
-    font-weight: 300;
-    color: rgb(85, 85, 85);
-  }
-  #CardGroup {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-  .card {
-    width: 47%;
-    background-color: rgb(249, 248, 248);
-    border-radius: 10px;
-    transition: background-color 0.1s ease-in-out;
-  }
-  .card:hover {
-    background-color: rgb(238, 238, 238);
-    transition: background-color 0.1s ease-in-out;
-  }
-  .CardIMG {
-    min-width: 100px;
-    width: 100%;
-    border-radius: 13px;
-  }
-  .Card-Padding {
-    padding: 30px;
-  }
-  .Card-title {
-    font-size: 19px;
-    font-weight: 600;
-    line-height: 1.3;
-    color: black;
-  }
-  .Card-Subtitle {
-    font-size: 17px;
-    font-weight: 300;
-    color: rgb(139, 139, 139);
-    font-family: sans-serif;
-  }
-  a {
-    text-decoration: none;
-  }
-  #MargenII {
-    margin-top: 100px;
-  }
-  .Section-title {
-    font-size: 24px;
-    font-weight: 600;
-  }
-  .Margin-hr {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    opacity: 0.2;
-  }
+	#introduction {
+		margin-top: 50px;
+	}
+	.font-mono {
+		font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+	}
+	h1 {
+		font-size: 40px;
+		font-weight: 600;
+		line-height: 0.8;
+	}
+	h2 {
+		font-weight: 600;
+		line-height: 2;
+	}
+	#subtitle {
+		font-size: 25px;
+		font-weight: 300;
+		color: gray;
+	}
+	#description {
+		font-size: 20px;
+		font-weight: 300;
+		color: rgb(114, 114, 114);
+		line-height: 1.4;
+	}
+	#First_hr {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		opacity: 0.2;
+	}
+	#Projects_Subtitle {
+		font-size: 18px;
+		font-weight: 300;
+		color: rgb(85, 85, 85);
+	}
+	#CardGroup {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
+	}
+	.card {
+		width: 47%;
+		background-color: rgb(249, 248, 248);
+		border-radius: 10px;
+		transition: background-color 0.1s ease-in-out;
+	}
+	.card:hover {
+		background-color: rgb(238, 238, 238);
+		transition: background-color 0.1s ease-in-out;
+	}
+	.CardIMG {
+		min-width: 100px;
+		width: 100%;
+		border-radius: 13px;
+	}
+	.Card-Padding {
+		padding: 30px;
+	}
+	.Card-title {
+		font-size: 19px;
+		font-weight: 600;
+		line-height: 1.3;
+		color: black;
+	}
+	.Card-Subtitle {
+		font-size: 17px;
+		font-weight: 300;
+		color: rgb(139, 139, 139);
+		font-family: sans-serif;
+	}
+	a {
+		text-decoration: none;
+	}
+	#MargenII {
+		margin-top: 100px;
+	}
+	.Section-title {
+		font-size: 24px;
+		font-weight: 600;
+	}
+	.Margin-hr {
+		margin-top: 40px;
+		margin-bottom: 40px;
+		opacity: 0.2;
+	}
 </style>

@@ -2,16 +2,16 @@
 export interface Props {
 	title: string;
 	date: string;
-	content: string;
+	summary: string;
 }
 
-const { title, date, content } = Astro.props;
+const { title, date, summary } = Astro.props;
 ---
 
 <div>
 	<h1 id="title">{title}</h1>
 	<p id="date">Published on {date}</p>
-	<p id="content">{content}</p>
+	<p id="content">{summary}</p>
 </div>
 
 <style scoped>
